@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 10
+  build:
+    commands:
+      - ./deployment/build-s3-dist.sh ${DIST_OUTPUT_BUCKET} ${SOLUTION_NAME} ${VERSION}
+      - cd ./deployment/ && ./run-unit-tests.sh
+      - mkdir -p deployment/open-source/ && touch deployment/open-source/.empty
+  post_build:
+    commands:
+      - aws s3 cp s3://solutions-build-assets/changelog-spec.yml buildspec.yml || true
+artifacts:
+  files:
+    - .git/**/*
+    - deployment/**/*
+    - buildspec.yml
+    - CHANGELOG.md
+    - .cfnnagignore

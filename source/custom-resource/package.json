@@ -1,0 +1,29 @@
+{
+  "name": "custom-resource",
+  "version": "1.2.0",
+  "engines": {
+    "node": "^12.x"
+  },
+  "description": "cfn custom resources for distributed load testing on AWS workflow",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest lib/**/*.spec.js --coverage --silent"
+  },
+  "dependencies": {
+    "axios": "^0.21.0",
+    "moment": "^2.29.1",
+    "uuid": "^8.3.1"
+  },
+  "devDependencies": {
+    "aws-sdk": "2.721.0",
+    "jest": "26.6.1",
+    "axios-mock-adapter": "1.19.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/awslabs/distributed-load-testing-on-aws"
+  },
+  "author": "aws-solution-builders",
+  "license": "Apache-2.0",
+  "readme": "./README.md"
+}
