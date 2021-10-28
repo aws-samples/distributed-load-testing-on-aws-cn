@@ -58,7 +58,7 @@ Parameters:
     Default: www.example.cn
     Description: Alternate Domain Names for CloudFront
     MinLength: 4
-    MaxLength: 30
+    MaxLength: 60
     # 6 subdomain at most, like dlt.keyi.solutions.aws.a2z.org.cn
     AllowedPattern: "^((https?)://)?(www.)?[a-z0-9]+(.[a-z0-9]{1,}){1,6}$"
     ConstraintDescription: "must be valid CNAME name"
